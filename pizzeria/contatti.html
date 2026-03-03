@@ -1,14 +1,32 @@
-<html lang=it>
+<!DOCTYPE html>
+<html lang="it">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-	<title>Powell Contatti</title>
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="style.css">
+  <title>Pizzeria West Point</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Bangers&family=Bruno+Ace+SC&family=Cabin:ital,wght@0,400..700;1,400..700&family=Esteban&family=Raleway:ital,wght@0,100..900;1,100..900&family=Unica+One&display=swap" rel="stylesheet">
+  <style>
+  h1 {
+  font-family: "Bangers", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  }
+  h2 {
+  font-family: "Bruno Ace SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  </head>
 <body>
 
+ 
 <nav>
-  <h2>Powell</h2>
+  <h2>Pizzeria West Point</h2>
   <ul>
     <li><a href="index.html">Home</a></li>
     <!-- <li><a href="chi-siamo.html">Chi siamo</a></li>
@@ -41,19 +59,26 @@
       <input type="text" name="nome" placeholder="nome" required><br><br>
 
       <label>Cognome</label>
-      <input type="text" name="cognome" placeholder="cognome"><br><br>
+      <input type="text" name="cognome" placeholder="cognome" required><br><br>
 
       <label>E-mail</label>
-      <input type="email" name="email" placeholder="e-mail" required><br>
+      <input type="email" name="email" placeholder="e-mail"><br>
       <br>
 
-      <label>Il tuo messaggio:</label><br><br>
-      <input type="text" id="object" name="oggetto" placeholder="Oggetto"><br><br>
-
+      <label>Indirizzo:</label><br><br>
       <textarea name="area_testo" rows="4" cols="50" required></textarea><br><br>
-
-      <input type="checkbox" name="opt1" value="yes" required><label>Clicca qui per accetteare l'informativa sulla privacy</label><br>
-
+	  <label>La pizza che vuoi:</label><br><br>
+      <input type="checkbox" name="opt1" value="yes"><label>Slinky</label><br>
+	  <input type="number" name="numero_pizze" min="0" required><br><br>
+	  <input type="checkbox" name="opt1" value="yes"><label>Tundra</label><br>
+	  <input type="number" name="numero_pizze" min="0" required><br><br>
+      <input type="checkbox" name="opt1" value="yes"><label>Nerestu</label><br>
+	  <input type="number" name="numero_pizze" min="0" required><br><br>
+	  <input type="checkbox" name="opt1" value="yes"><label>Pozz</label><br>
+	  <input type="number" name="numero_pizze" min="0" required><br><br>
+      <input type="checkbox" name="opt1" value="yes"><label>Tenrelic</label><br>
+	  <input type="number" name="numero_pizze" min="0" required><br><br>
+	  
       <button type="submit">Invia</button>
       <button type="submit">Cancella</button>
     </div>
@@ -62,6 +87,6 @@
 </main>
 </body>
 <footer class="fixed">
-  © 2026 Powell
+  © 2026 West Point
 </footer>
 </html>
