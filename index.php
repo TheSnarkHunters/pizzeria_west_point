@@ -1,19 +1,3 @@
-<?php 
-include "config/db.php"; // Se la cartella config è allo stesso livello di index.php
-
-$sql = "SELECT
-    piatti.id,
-    piatti.nome,
-    piatti.descrizione,
-    piatti.prezzo,
-    GROUP_CONCAT(allergeni.nome SEPARATOR ', ') as allergeni_list
-    FROM piatti
-    LEFT JOIN piatti_allergeni ON piatti.id = piatti_allergeni.id_piatto
-    LEFT JOIN allergeni ON piatti_allergeni.id_allergeni = allergeni.id
-    GROUP BY piatti.id";
-
-$result = $conn->query($sql);
-?>
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -84,31 +68,17 @@ $result = $conn->query($sql);
   <h2>Il menù dei veterani</h2> 
   <p>In perfetta sintonia con il nostro stile anticonformistico, strano ed emblematico, il West Point serve esclusivamente pizze non convenzionalistiche.</p><br>
       <div class="cards-container" style="display: flex; flex-wrap: wrap; gap: 20px;">
-        <?php if ($result && $result->num_rows > 0): ?>
-            <?php while($row = $result->fetch_assoc()): ?>
-                <div class="card-piatto" style="border: 2px solid red; padding: 15px; border-radius: 10px; width: 300px; background: #fff;">
-                    <h3><?php echo htmlspecialchars($row['nome']); ?></h3>
-                    <p><i><?php echo htmlspecialchars($row['descrizione']); ?></i></p>
-                    <p><strong>Prezzo:</strong> €<?php echo number_format($row['prezzo'], 2); ?></p>
-                    <p style="color: #666; font-size: 0.8em;">
-                        <i class="fa-solid fa-triangle-exclamation"></i> Allergeni: 
-                        <?php echo htmlspecialchars($row['allergeni_list'] ?: 'Nessuno'); ?>
-                    </p>
-                </div>
-            <?php endwhile; ?>
-        <?php else: ?>
-            <p>I veterani sono in missione, il menù tornerà presto.</p>
-        <?php endif; ?>
-    </div>
-  
-  <!-- <ul>
+       <ul>
           <li><b>Slinky</b>: Una pizza completa per chi sa di essere il numero uno in tutto. Ingredienti: pomodoro, mozzarella, gorgonzola, wurstel, salsiccia, rucola, capperi, acciughe, porcini,
             patatine fritte, uovo, prosciutto crudo, prosciutto cotto, cetriolo.</li>
           <li><b>Tundra</b>: Una pizza dal sapore di mare, per chi detesta la terraferma. Ingredienti: pomodoro, acciughe, tonno.</li>
           <li><b>Nerestu</b>: Una pizza alcolica, per fuggire dalla realtà di tutti i giorni. Ingredienti: pomodoro, mozzarella, limoncello.</li>
           <li><b>Pozz</b>: Una pizza sarcastica, per l'uomo che affronta la vita con uno sguardo beffardo. Ingredienti: pomodoro, mozzarella, salsiccia e tonno.</li>
           <li><b>Tenrelic</b>: Una pizza modesta per chi conduce una vita tranquilla. Ingredienti: mozzarella.</li>
-      </ul> -->
+      </ul>
+    </div>
+  
+
 
   </p><br>
   </section>
